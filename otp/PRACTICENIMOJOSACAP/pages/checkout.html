@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <script src="../js/checkout.js"></script>
+</head>
+<body>
+
+<nav class="nav" onclick="goBack()">
+  <div class="back-wrap">
+    <span class="arrow"></span>
+  </div>
+</nav>
+
+<section class="checkout-container">
+  
+  <div id="msg" class="msg"></div>
+
+  <!-- BILLING FORM -->
+  <div class="form">
+    <h2>Payment</h2>
+
+    <input id="name" placeholder="Full Name">
+    <input id="phone" placeholder="Phone Number" inputmode="numeric" pattern="[0-9]*">
+    <input id="address" placeholder="Address">
+    <input id="city" placeholder="City">
+
+    <div class="payment-row">
+
+      <label class="pay-card active">
+        <input type="radio" name="payment" value="Cash on Delivery" checked>
+        <span class="icon">💵</span>
+        <span>COD</span>
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" value="GCash">
+        <span class="icon">📱</span>
+        <span>GCash</span>
+      </label>
+
+    </div>
+
+    <button onclick="placeOrder()">Place Order</button>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="summary">
+    <h3>Your Order</h3>
+
+    <div id="summary-items"></div>
+
+    <p>Subtotal: ₱<span id="subtotal"></span></p>
+    <p>Delivery: ₱50</p>
+    <h2>Total: ₱<span id="total"></span></h2>
+  </div>
+
+</section>
+
+</body>
+</html>
