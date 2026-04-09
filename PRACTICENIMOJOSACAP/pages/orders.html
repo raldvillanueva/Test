@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Orders</title>
+  <link rel="stylesheet" href="../css/orders.css">
+  <script src="../js/orders.js" defer></script>
+</head>
+<body>
+
+  <!-- NAV -->
+<nav class="nav">
+
+  <!-- LEFT -->
+<div class="back-btn" onclick="goBack()">
+  <span class="arrow"></span>
+</div>
+
+  <!-- RIGHT -->
+  <div class="user-menu">
+
+    <!-- USER ICON -->
+    <div class="user-icon" id="userIcon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="dropdown" id="dropdown">
+
+      <div class="dropdown-header">
+        <div class="avatar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <p id="userEmail">user@email.com</p>
+      </div>
+
+      <hr>
+
+      <div class="dropdown-item" onclick="showView('profileView')">Profile</div>
+      <div class="dropdown-item" onclick="showView('settingsView')">Settings</div>
+      <div class="dropdown-item logout" onclick="logout()">Sign out</div>
+
+    </div> <!-- ✅ CLOSE DROPDOWN -->
+
+  </div> <!-- ✅ CLOSE USER MENU -->
+
+</nav> <!-- ✅ CLOSE NAV -->
+
+<!-- TABS -->
+<div class="tabs">
+  <span id="ordersTab" class="active" onclick="showView('ordersView')">Orders</span>
+  <span id="profileTab" onclick="showView('profileView')">Profile</span>
+</div>
+
+<!-- 🔥 ORDERS VIEW -->
+<div id="ordersView" class="view active">
+  <div class="orders-container">
+
+
+  <div id="orders-list" class="empty-box">
+    <h3>No orders yet</h3>
+    <p>Go to store to place an order.</p>
+  </div>
+
+
+  </div>
+</div>
+
+<!-- 🔥 PROFILE VIEW -->
+<div id="profileView" class="view">
+  <div class="profile-container">
+
+    <!-- LEFT SIDE -->
+    <div class="profile-left">
+
+      <div class="summary">
+        <h3>Profile</h3>
+
+        <p class="label">Name</p>
+        <p id="fullName">Your Name ✏️</p>
+
+        <p class="label">Email</p>
+        <p id="emailText">your@email.com</p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="profile-right">
+
+      <div class="summary">
+        <div class="address-header">
+          <h3>Addresses</h3>
+          <span class="add">+ Add</span>
+        </div>
+
+        <div class="no-address">
+          No addresses added
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  <!-- SETTINGS VIEW -->
+  <div id="settingsView" class="view">
+    <div class="settings-container">
+
+      <div class="summary">
+        <h3>Account Settings</h3>
+        <p class="desc">Manage your account preferences and security.</p>
+      </div>
+
+      <div class="summary settings-card">
+        <div class="settings-row">
+          <div class="settings-info">
+            <strong>Sign out everywhere</strong>
+            <p>This will sign you out of all devices and sessions where you're currently logged in.</p>
+          </div>
+          <button class="settings-btn-danger" onclick="logout()">Sign Out All Devices</button>
+        </div>
+      </div>
+
+      <div class="summary settings-card">
+        <div class="settings-row">
+          <div class="settings-info">
+            <strong>Delete Account</strong>
+            <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+          </div>
+          <button class="settings-btn-outline-danger">Delete Account</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
